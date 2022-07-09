@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/etinosa.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="issues-overview">
+        <div class="container bg-white pt-5">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-4 h-auto">
+                    <div class="image">
+                      <img src="./img/arrows-out-cardinal-fill-svgrepo-com.svg" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="col-md-8 fs-5">
+                    <p>Overview of Power Source with issues</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="input-group input-group-sm"> 
+                    <input type="text" class="form-control rounded-pill" id="myInput" onkeyup="myFunction()" aria-label="Sizing example input" placeholder="search data" aria-describedby="inputGroup-sizing-sm">
+                    <span><div class="dot-0">
+                      <div class="click-s"></div>
+                      <div class="click-s"></div>
+                      <div class="click-s"></div>
+                    </div></span>
+                  </div>
+                </div>
+                <!-- <div class="search-box row">
+                  <div>
+                    <input
+                      type="text"
+                      id="myInput"
+                      onkeyup="myFunction()"
+                      placeholder="Search data"
+                    />
+                  </div>
+                  <div class="dot-0">
+                    <div class="click-s"></div>
+                    <div class="click-s"></div>
+                    <div class="click-s"></div>
+                  </div>
+                </div> -->
+                
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table" id="myTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Alert</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Severity</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Diesel Gen</td>
+                    <td>101</td>
+                    <td>High Temperature</td>
+                    <td>2021-05-16 08:00:24</td>
+                    <td><div class="critical-box">
+                      <div class="critical">
+                        Critical
+                      </div>
+                    </div></td>
+                    <td><div class="critical-box">
+                      <div class="online status">
+                        Online
+                      </div>
+                    </div></td>
+                    <td class="pointer shutdown1">Shutdown</td>
+                    <td class="dot-box">
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Petrol Gen</td>
+                    <td>101</td>
+                    <td>Low Pressure</td>
+                    <td>2021-05-16 08:00:24</td>
+                    <td><div class="critical-box">
+                      <div class="critical">
+                      Critical
+                    </div>
+                    </div></td>
+                    <td><div class="critical-box">
+                      <div class="online status">
+                        Online
+                      </div>
+                    </div></td>
+                    <td class="pointer" onclick="shutdown1" >Shutdown</td>
+                    <td class="dot-box">
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Petrol Gen</td>
+                    <td>102</td>
+                    <td>Low fuel</td>
+                    <td>2021-05-16 08:00:24</td>
+                    <td>
+                      <div class="critical-box">
+                        <div class="warning">
+                          Warning
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="critical-box">
+                        <div class="offline status">Offline</div>
+                      </div>
+                    </td>
+                    <td class="pointer shutdown1">Restart</td>
+                    <td class="dot-box">
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Diesel Gen</td>
+                    <td>103</td>
+                    <td>Battery not charging</td>
+                    <td>2021-05-16 08:00:24</td>
+                    <td><div class="critical-box">
+                      <div class="warning">
+                        Warning
+                      </div>
+                    </div></td>
+                    <td><div class="critical-box">
+                      <div class="offline" id="status">
+                        Offline
+                      </div>
+                    </div></td>
+                    <td class="pointer" id="shutdown1">Shutdown</td>
+                    <td class="dot-box">
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Utility</td>
+                    <td>100</td>
+                    <td>Disconnected</td>
+                    <td>2021-05-16 08:00:24</td>
+                    <td><div class="critical-box">
+                      <div class="warning">
+                        Warning
+                      </div>
+                    </div></td>
+                    <td><div class="critical-box">
+                      <div class="offline">
+                        Offline
+                      </div>
+                    </div></td>
+                    <td class="pointer">Shutdown</td>
+                    <td class="dot-box">
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Petrol Gen</td>
+                    <td>104</td>
+                    <td>Low oil pressure</td>
+                    <td>2021-05-16 08:00:24</td>
+                    <td><div class="critical-box">
+                      <div class="critical">
+                        Critical
+                      </div>
+                    </div>
+                    <td><div class="critical-box">
+                      <div class="offline">
+                        Offline
+                      </div>
+                    </div></td>
+                    <td class="pointer">Maintenance</td>
+                    <td class="dot-box">
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                      <div class="clicking"></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+     
+    <script src="./js/app.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
