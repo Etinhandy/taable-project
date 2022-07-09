@@ -45,6 +45,10 @@
   font-size: 0.7rem!important;
 }
 
+thead {
+  color: var(--table-topic-color);
+}
+
 .clicking {
   height: 0.1rem;
   width: 0.2rem;
