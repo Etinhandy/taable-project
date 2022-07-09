@@ -36,14 +36,3 @@ actionEl.addEventListener("click", (e) => {
   }
 });
 
-
-// let generators = [
-//   [
-//     type: "Diesel Gen",
-//     ID: "101",
-//     Alert: "High Temperature",
-//     Time: "2021-05-16 08:00:24",
-//     Severity: "Critical",
-//     background: style.background = "#D8D8D8",
-//   ]
-// ]
