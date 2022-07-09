@@ -20,7 +20,7 @@ function myFunction() {
   }
 }
 
-// My code to change the button order
+// // My code to change the button order
 let actionEl = document.querySelector(".shutdown1");
 let statusEl = document.querySelector(".status");
 
@@ -35,3 +35,15 @@ actionEl.addEventListener("click", (e) => {
     statusEl.style.background = "#09A118";
   }
 });
+
+
+// let generators = [
+//   [
+//     type: "Diesel Gen",
+//     ID: "101",
+//     Alert: "High Temperature",
+//     Time: "2021-05-16 08:00:24",
+//     Severity: "Critical",
+//     background: style.background = "#D8D8D8",
+//   ]
+// ]

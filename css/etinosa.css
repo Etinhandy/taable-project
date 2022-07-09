@@ -41,6 +41,10 @@
   display: flex;
 }
 
+.table {
+  font-size: 0.7rem!important;
+}
+
 .clicking {
   height: 0.1rem;
   width: 0.2rem;

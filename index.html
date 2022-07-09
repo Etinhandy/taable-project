@@ -11,11 +11,12 @@
 <body>
     <section id="issues-overview">
         <div class="container bg-white pt-5">
+          <p>
             <div class="row">
               <div class="col-md-8">
                 <div class="row">
                   <div class="col-md-4 h-auto">
-                    <div class="image">
+                    <div class="image" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                       <img src="./img/arrows-out-cardinal-fill-svgrepo-com.svg" alt="" class="img-fluid">
                     </div>
                   </div>
@@ -37,160 +38,168 @@
                 </div>
               </div>
             </div>
-            <div class="table-responsive">
-              <table class="table" id="myTable">
-                <thead>
-                  <tr>
-                    <th scope="col">Type</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Alert</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Severity</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Diesel Gen</td>
-                    <td>101</td>
-                    <td>High Temperature</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="critical">
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <div class="table-responsive">
+                <table class="table" id="myTable">
+                  <thead>
+                    <tr>
+                      <th scope="col">Type</th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Alert</th>
+                      <th scope="col">Time</th>
+                      <th scope="col">Severity</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="render">
+                    <tr>
+                      <td>Diesel Gen</td>
+                      <td>101</td>
+                      <td>High Temperature</td>
+                      <td>2021-05-16 08:00:24</td>
+                      <td><div class="critical-box">
+                        <div class="critical">
+                          Critical
+                        </div>
+                      </div></td>
+                      <td><div class="critical-box">
+                        <div class="online status">
+                          Online
+                        </div>
+                      </div></td>
+                      <td class="pointer shutdown1">Shutdown</td>
+                      <td class="dot-box">
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Petrol Gen</td>
+                      <td>101</td>
+                      <td>Low Pressure</td>
+                      <td>2021-05-16 08:00:24</td>
+                      <td><div class="critical-box">
+                        <div class="critical">
                         Critical
                       </div>
-                    </div></td>
-                    <td><div class="critical-box">
-                      <div class="online status">
-                        Online
-                      </div>
-                    </div></td>
-                    <td class="pointer shutdown1">Shutdown</td>
-                    <td class="dot-box">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Petrol Gen</td>
-                    <td>101</td>
-                    <td>Low Pressure</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="critical">
-                      Critical
-                    </div>
-                    </div></td>
-                    <td><div class="critical-box">
-                      <div class="online status">
-                        Online
-                      </div>
-                    </div></td>
-                    <td class="pointer" onclick="shutdown1" >Shutdown</td>
-                    <td class="dot-box">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Petrol Gen</td>
-                    <td>102</td>
-                    <td>Low fuel</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td>
-                      <div class="critical-box">
+                      </div></td>
+                      <td><div class="critical-box">
+                        <div class="online status">
+                          Online
+                        </div>
+                      </div></td>
+                      <td class="pointer" onclick="shutdown1" >Shutdown</td>
+                      <td class="dot-box">
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Petrol Gen</td>
+                      <td>102</td>
+                      <td>Low fuel</td>
+                      <td>2021-05-16 08:00:24</td>
+                      <td>
+                        <div class="critical-box">
+                          <div class="warning">
+                            Warning
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="critical-box">
+                          <div class="offline status">Offline</div>
+                        </div>
+                      </td>
+                      <td class="pointer shutdown1">Restart</td>
+                      <td class="dot-box">
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Diesel Gen</td>
+                      <td>103</td>
+                      <td>Battery not charging</td>
+                      <td>2021-05-16 08:00:24</td>
+                      <td><div class="critical-box">
                         <div class="warning">
                           Warning
                         </div>
+                      </div></td>
+                      <td><div class="critical-box">
+                        <div class="offline" id="status">
+                          Offline
+                        </div>
+                      </div></td>
+                      <td class="pointer" id="shutdown1">Shutdown</td>
+                      <td class="dot-box">
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Utility</td>
+                      <td>100</td>
+                      <td>Disconnected</td>
+                      <td>2021-05-16 08:00:24</td>
+                      <td><div class="critical-box">
+                        <div class="warning">
+                          Warning
+                        </div>
+                      </div></td>
+                      <td><div class="critical-box">
+                        <div class="offline">
+                          Offline
+                        </div>
+                      </div></td>
+                      <td class="pointer">Shutdown</td>
+                      <td class="dot-box">
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Petrol Gen</td>
+                      <td>104</td>
+                      <td>Low oil pressure</td>
+                      <td>2021-05-16 08:00:24</td>
+                      <td><div class="critical-box">
+                        <div class="critical">
+                          Critical
+                        </div>
                       </div>
-                    </td>
-                    <td>
-                      <div class="critical-box">
-                        <div class="offline status">Offline</div>
-                      </div>
-                    </td>
-                    <td class="pointer shutdown1">Restart</td>
-                    <td class="dot-box">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Diesel Gen</td>
-                    <td>103</td>
-                    <td>Battery not charging</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="warning">
-                        Warning
-                      </div>
-                    </div></td>
-                    <td><div class="critical-box">
-                      <div class="offline" id="status">
-                        Offline
-                      </div>
-                    </div></td>
-                    <td class="pointer" id="shutdown1">Shutdown</td>
-                    <td class="dot-box">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Utility</td>
-                    <td>100</td>
-                    <td>Disconnected</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="warning">
-                        Warning
-                      </div>
-                    </div></td>
-                    <td><div class="critical-box">
-                      <div class="offline">
-                        Offline
-                      </div>
-                    </div></td>
-                    <td class="pointer">Shutdown</td>
-                    <td class="dot-box">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Petrol Gen</td>
-                    <td>104</td>
-                    <td>Low oil pressure</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="critical">
-                        Critical
-                      </div>
-                    </div>
-                    <td><div class="critical-box">
-                      <div class="offline">
-                        Offline
-                      </div>
-                    </div></td>
-                    <td class="pointer">Maintenance</td>
-                    <td class="dot-box">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                      <td><div class="critical-box">
+                        <div class="offline">
+                          Offline
+                        </div>
+                      </div></td>
+                      <td class="pointer">Maintenance</td>
+                      <td class="dot-box">
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                        <div class="clicking"></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+          </div>
         </div>
     </section>
+
+
+    
 
 
     
