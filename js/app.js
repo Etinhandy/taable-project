@@ -21,18 +21,36 @@ function myFunction() {
 }
 
 // // My code to change the button order
-let actionEl = document.querySelector(".shutdown1");
-let statusEl = document.querySelector(".status");
+let actionEl = document.getElementsByClassName("shutdown1");
+let statusEl = document.getElementsByClassName("status");
 
-actionEl.addEventListener("click", (e) => {
-  if (actionEl.innerText === "Shutdown") {
-    actionEl.innerText = "Restart";
-    statusEl.innerText = "Offline";
-    statusEl.style.background = "#D8D8D8";
-  } else {
-    actionEl.innerText = "Shutdown";
-    statusEl.innerText = "Online";
-    statusEl.style.background = "#09A118";
+// forEach loop to change the button order
+let actionEl2 = Array.from(actionEl);
+let statusEl2 = Array.from(statusEl)
+
+
+for(let I =0; I < actionEl2.length; I++) {
+  actionEl2[I].addEventListener('click', function(){
+    if(actionEl2[I].innerText === 'shutdown') {
+      actionEl2[I].innerText = "restart"
+      statusEl2[I].innerText = "offline"
+      statusEl2[I].style.backgroundColor = "#d8d8d8"
+    
+    }
+    else if(actionEl2[I].innerText === 'maintenance') {
+      actionEl2[I].innerText = "restart"
+      statusEl2[I].innerText = "offline"
+      statusEl2[I].style.backgroundColor = "#d8d8d8"
+    
+    }
+ else {
+  actionEl2[I].innerText = "shutdown"
+  statusEl2[I].innerText = "online"
+  statusEl2[I].style.backgroundColor = "#09a118"
+}
   }
-});
+  ) // end of addEventListener
+} // end of for loop
+
+
 
