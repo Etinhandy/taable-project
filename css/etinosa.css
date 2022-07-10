@@ -88,14 +88,6 @@ thead {
   cursor: pointer;
 }
 
-td .critical,
-.online,
-.offline,
-.warning {
-  display: flex;
-  justify-content: center;
-}
-
 .critical-box {
   display: flex;
   justify-content: center;
