@@ -34,7 +34,7 @@
   border: none !important;
   outline: none !important;
   width: 4rem !important;
-  font-size: 0.7rem!important;
+  font-size: 0.7rem !important;
 }
 
 .click-s {
@@ -43,7 +43,6 @@
   background-color: var(--dot-color);
   margin-bottom: 0.1rem;
 }
-
 
 .table {
   font-size: 0.7rem !important;
@@ -60,44 +59,29 @@ thead {
   margin-right: 0.09rem;
 }
 
-.offline {
+.var-box {
   width: 4rem;
   height: 1.5rem;
-  background-color: var(--offline-color);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 6px;
+}
+
+.offline {
+  background-color: var(--offline-color);
 }
 
 .online {
-  width: 4rem;
-  height: 1.5rem;
   background-color: var(--online-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
 }
 
 .critical {
-  width: 4rem;
-  height: 1.5rem;
   background-color: var(--critical-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
 }
 
 .warning {
-  width: 4rem;
-  height: 1.5rem;
   background-color: var(--warning-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
 }
 
 .pointer {
