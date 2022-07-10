@@ -29,19 +29,12 @@
   width: 2rem;
 }
 
-.form-control,
-input {
+.form-control {
   background-color: var(--offline-color) !important;
   border: none !important;
   outline: none !important;
   width: 4rem !important;
-}
-
-.dot-0 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 1rem;
+  font-size: 0.7rem!important;
 }
 
 .click-s {
@@ -51,9 +44,6 @@ input {
   margin-bottom: 0.1rem;
 }
 
-.dot-box {
-  display: flex;
-}
 
 .table {
   font-size: 0.7rem !important;
@@ -64,10 +54,10 @@ thead {
 }
 
 .clicking {
-  height: 0.1rem;
+  height: 0.2rem;
   width: 0.2rem;
   background-color: var(--dot-color);
-  margin: 0.02rem;
+  margin-right: 0.09rem;
 }
 
 .offline {
