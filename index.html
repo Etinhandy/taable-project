@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="renderUI()">
     <section id="issues-overview" class="d-flex align-items-md-center">
         <div class="container bg-white">
             <div class="row mb-5 border-bottom">
@@ -27,7 +27,7 @@
               <div class="col-md-4">
                 <div class="d-flex justify-content-lg-end justify-content-sm-center">
                   <div class="input-group input-group-sm me-lg-5"> 
-                    <input type="text" class="form-control rounded-pill" id="myInput" onkeyup="myFunction()" aria-label="Sizing example input" placeholder="search data" aria-describedby="inputGroup-sizing-sm">
+                    <input type="text" class="form-control rounded-pill" id="search-input" onkeyup="searchResult()" aria-label="Sizing example input" placeholder="search data" aria-describedby="inputGroup-sizing-sm">
                     <span><div class="dot-0 d-flex flex-column py-2 ms-lg-2 d-none d-md-block d-lg-block">
                       <div class="click-s "></div>
                       <div class="click-s"></div>
@@ -51,141 +51,8 @@
                     <th scope="col"></th>
                   </tr>
                 </thead>
-                <tbody class="text-center">
-                  <tr>
-                    <td>Diesel Gen</td>
-                    <td>101</td>
-                    <td>High Temperature</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="critical var-box">
-                        Critical
-                      </div>
-                    </div></td>
-                    <td><div class="critical-box">
-                      <div class="online status var-box">
-                        online
-                      </div>
-                    </div></td>
-                    <td class="pointer shutdown1">shutdown</td>
-                    <td class="dot-box d-flex align-items-center py-3">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Petrol Gen</td>
-                    <td>101</td>
-                    <td>Low Pressure</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="critical var-box">
-                      Critical
-                    </div>
-                    </div></td>
-                    <td><div class="critical-box">
-                      <div class="online status var-box">
-                        online
-                      </div>
-                    </div></td>
-                    <td class="pointer shutdown1">shutdown</td>
-                    <td class="dot-box d-flex align-items-center py-3">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Petrol Gen</td>
-                    <td>102</td>
-                    <td>Low fuel</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td>
-                      <div class="critical-box">
-                        <div class="warning var-box">
-                          Warning
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="critical-box">
-                        <div class="offline status var-box">offline</div>
-                      </div>
-                    </td>
-                    <td class="pointer shutdown1">restart</td>
-                    <td class="dot-box d-flex align-items-center py-3">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Diesel Gen</td>
-                    <td>103</td>
-                    <td>Battery not charging</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="warning var-box">
-                        Warning
-                      </div>
-                    </div></td>
-                    <td><div class="critical-box">
-                      <div class="offline status var-box">
-                        offline
-                      </div>
-                    </div></td>
-                    <td class="pointer shutdown1">restart</td>
-                    <td class="dot-box d-flex align-items-center py-3">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Utility</td>
-                    <td>100</td>
-                    <td>Disconnected</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="warning var-box">
-                        Warning
-                      </div>
-                    </div></td>
-                    <td><div class="critical-box">
-                      <div class="offline status var-box">
-                        offline
-                      </div>
-                    </div></td>
-                    <td class="pointer shutdown1">restart</td>
-                    <td class="dot-box d-flex align-items-center py-3">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Petrol Gen</td>
-                    <td>104</td>
-                    <td>Low oil pressure</td>
-                    <td>2021-05-16 08:00:24</td>
-                    <td><div class="critical-box">
-                      <div class="critical var-box">
-                        Critical
-                      </div>
-                    </div>
-                    <td><div class="critical-box">
-                      <div class="offline status var-box">
-                        offline
-                      </div>
-                    </div></td>
-                    <td class="pointer shutdown1">maintenance</td>
-                    <td class="dot-box d-flex align-items-center py-3">
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                      <div class="clicking"></div>
-                    </td>
-                  </tr>
+                <tbody class="text-center" id="table-body">
+
                 </tbody>
               </table>
             </div>
@@ -197,7 +64,8 @@
 
 
      
-    <script src="./js/app.js"></script>
+    <!-- <script src="./js/app.js"></script> -->
+    <script src="./js/dataAndLogic.js"></script>
     <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
